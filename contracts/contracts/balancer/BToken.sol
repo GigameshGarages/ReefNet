@@ -14,7 +14,7 @@
 pragma solidity 0.5.7;
 
 import './BNum.sol';
-import './interfaces/IERC20Template.sol';
+import '../interfaces/IERC20Template.sol';
 
 // Highly opinionated token implementation
 
