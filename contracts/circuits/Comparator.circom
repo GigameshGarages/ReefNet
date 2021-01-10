@@ -1,4 +1,4 @@
-template IsZero() {
+template Comparator() {
     signal input in;
     signal output out;
 
@@ -10,3 +10,4 @@ template IsZero() {
     in*out === 0;
 }
 
+component main = Comparator();
