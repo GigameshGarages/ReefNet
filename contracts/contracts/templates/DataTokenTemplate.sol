@@ -4,7 +4,7 @@ pragma solidity 0.5.7;
 // Code is Apache-2.0 and docs are CC-BY-4.0
 
 import '../interfaces/IERC20Template.sol';
-import 'openzeppelin-solidity/contracts/token/ERC20/ERC20.sol';
+import '../ERC20.sol';
 
 
 /**
