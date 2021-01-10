@@ -3,7 +3,7 @@ pragma solidity ^0.6.2;
 // Experimenting RANDAO + VDF on version 1.0
 // Justin Drake https://ethresear.ch/t/minimal-vdf-randomness-beacon/3566
 
-import "./BeaconContract.sol";
+import "./StreamBeacon.sol";
 
 contract Beacon{
     function getLatestRandomness()external view returns(uint256,bytes32){}
