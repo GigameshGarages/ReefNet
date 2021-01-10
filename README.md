@@ -25,4 +25,19 @@ Privacy Preserving Metadata Proof Powered Data Streaming Token Vaults on Ocean P
 - Data Streaming Management using VDF Protected RANDAO
 - Data Token Transactions using Simple zkRollups
 
+## Testing Instructions
 
+- Solidity Smart Contract Testing in Truffle
+- Circom Circuit Compilation using Circom 
+- Circom Circuit Execution using SnarkJS
+- Zokrates Proof Compilation on Remix
+- Zokrates Proof Verification on Remix
+
+### Node Package Managers for Circom and SnarkJS
+
+- npm install -g circom
+- npm install -g snarkjs
+
+### Node Package Manager for Truffle
+
+- npm install -g truffle
