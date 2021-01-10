@@ -37,12 +37,12 @@ contract BVault {
     function Vault() public {
         owner = msg.sender;
         creationTime = now;
-        gt = new GamblingToken();
+        bt = new BToken();
     }
     
     // only admin can transfer the tokens
     function transferTokens(address user,uint amount) public ownerOnly returns(bool) {
-        return gt.transfer(user,amount);
+        return bt.transfer(user,amount);
     }
     
     function withdraw() public returns(bool) {
@@ -56,7 +56,7 @@ contract BVault {
     }
     
     function getBalance(address a) public view returns(uint) {
-        return gt.balanceOf(a);
+        return bt.balanceOf(a);
     }
     
     // calculate amount based on intervals and milestones (here: 10% amount in an interval upto 10 milestones)
