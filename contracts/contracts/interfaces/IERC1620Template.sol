@@ -1,4 +1,4 @@
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.7;
 
 /// @title ERC-1620 Money Streaming Standard
 /// @dev See https://github.com/ethereum/eips/issues/1620
