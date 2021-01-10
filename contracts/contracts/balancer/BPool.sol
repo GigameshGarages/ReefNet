@@ -881,14 +881,14 @@ contract BPool is BToken, BMath {
     function _pullUnderlying(address erc20, address from, uint amount)
         internal
     {
-        bool xfer = IERC20(erc20).transferFrom(from, address(this), amount);
+        bool xfer = IERC20Template(erc20).transferFrom(from, address(this), amount);
         require(xfer, 'ERR_ERC20_FALSE');
     }
 
     function _pushUnderlying(address erc20, address to, uint amount)
         internal
     {
-        bool xfer = IERC20(erc20).transfer(to, amount);
+        bool xfer = IERC20Template(erc20).transfer(to, amount);
         require(xfer, 'ERR_ERC20_FALSE');
     }
 
