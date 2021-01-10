@@ -38,3 +38,5 @@ template Switcher() {
     outL <==  aux + L;
     outR <== -aux + R;
 }
+
+component main = Switcher();
