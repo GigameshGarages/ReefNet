@@ -112,7 +112,7 @@ contract ERC20 is Context, IERC20Template {
      * - `recipient` cannot be the zero address.
      * - the caller must have a balance of at least `amount`.
      */
-    function transfer(address recipient, uint256 amount) public virtual returns (bool) {
+    function transfer(address recipient, uint256 amount) public returns (bool) {
         _transfer(_msgSender(), recipient, amount);
         return true;
     }
@@ -120,7 +120,7 @@ contract ERC20 is Context, IERC20Template {
     /**
      * @dev See {IERC20-allowance}.
      */
-    function allowance(address owner, address spender) public view virtual returns (uint256) {
+    function allowance(address owner, address spender) public view returns (uint256) {
         return _allowances[owner][spender];
     }
 
@@ -131,7 +131,7 @@ contract ERC20 is Context, IERC20Template {
      *
      * - `spender` cannot be the zero address.
      */
-    function approve(address spender, uint256 amount) public virtual returns (bool) {
+    function approve(address spender, uint256 amount) public returns (bool) {
         _approve(_msgSender(), spender, amount);
         return true;
     }
@@ -149,7 +149,7 @@ contract ERC20 is Context, IERC20Template {
      * - the caller must have allowance for ``sender``'s tokens of at least
      * `amount`.
      */
-    function transferFrom(address sender, address recipient, uint256 amount) public virtual returns (bool) {
+    function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
         _transfer(sender, recipient, amount);
         _approve(sender, _msgSender(), _allowances[sender][_msgSender()].sub(amount, "ERC20: transfer amount exceeds allowance"));
         return true;
@@ -205,7 +205,7 @@ contract ERC20 is Context, IERC20Template {
      * - `recipient` cannot be the zero address.
      * - `sender` must have a balance of at least `amount`.
      */
-    function _transfer(address sender, address recipient, uint256 amount) internal virtual {
+    function _transfer(address sender, address recipient, uint256 amount) internal {
         require(sender != address(0), "ERC20: transfer from the zero address");
         require(recipient != address(0), "ERC20: transfer to the zero address");
 
@@ -225,7 +225,7 @@ contract ERC20 is Context, IERC20Template {
      *
      * - `to` cannot be the zero address.
      */
-    function _mint(address account, uint256 amount) internal virtual {
+    function _mint(address account, uint256 amount) internal {
         require(account != address(0), "ERC20: mint to the zero address");
 
         _beforeTokenTransfer(address(0), account, amount);
@@ -246,7 +246,7 @@ contract ERC20 is Context, IERC20Template {
      * - `account` cannot be the zero address.
      * - `account` must have at least `amount` tokens.
      */
-    function _burn(address account, uint256 amount) internal virtual {
+    function _burn(address account, uint256 amount) internal {
         require(account != address(0), "ERC20: burn from the zero address");
 
         _beforeTokenTransfer(account, address(0), amount);
