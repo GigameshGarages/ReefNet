@@ -1,7 +1,7 @@
 pragma solidity ^0.6.2;
 
-import "./IFactRegistry.sol";
-import "./PublicInputOffsets.sol";
+import "../interfaces/IFactRegistry.sol";
+import "../utils/PublicInputOffsets.sol";
 
 
 contract StreamBeacon is PublicInputOffsets {
