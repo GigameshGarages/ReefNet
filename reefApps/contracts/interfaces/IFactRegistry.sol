@@ -15,5 +15,5 @@ pragma solidity ^0.5.7;
 
 contract IFactRegistry {
     
-    function isValid(bytes32 fact) view  virtual public returns (bool);
+    function isValid(bytes32 fact) view public returns (bool);
 }
