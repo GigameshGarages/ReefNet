@@ -1,3 +1,7 @@
+pragma solidity 0.5.7;
+
+import "./BToken.sol";
+
 contract BVault {
     
     BToken bt;
