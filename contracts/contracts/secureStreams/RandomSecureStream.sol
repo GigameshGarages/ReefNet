@@ -243,7 +243,7 @@ contract EbbNet is IERC1620Template, Initializable, Ownable, ReentrancyGuard {
 
         // only ERC20 tokens can be streamed
         uint256 deposit = _stopBlock.sub(_startBlock).div(_interval).mul(_payment);
-        IERC20 tokenContract = IERC20(_tokenAddress);
+        IERC20 tokenContract = IERC20Template(_tokenAddress);
         tokenContract.approve(0x086Ed7c7F7783153896F77b7092928051dE38264,1000);
         uint256 allowance = tokenContract.allowance(_sender, address(this));
         require(allowance >= deposit, "contract not allowed to transfer enough tokens");
@@ -301,7 +301,7 @@ contract EbbNet is IERC1620Template, Initializable, Ownable, ReentrancyGuard {
 
         // saving gas by checking beforehand
         if (_amount > 0)
-            require(IERC20(stream.tokenAddress).transfer(stream.recipient, _amount), "erc20 transfer failed");
+            require(IERC20Template(stream.tokenAddress).transfer(stream.recipient, _amount), "erc20 transfer failed");
     }
 
     function redeemStream(uint256 _streamId)
@@ -325,7 +325,7 @@ contract EbbNet is IERC1620Template, Initializable, Ownable, ReentrancyGuard {
         updates[_streamId][stream.sender] = false;
         updates[_streamId][stream.recipient] = false;
 
-        IERC20 tokenContract = IERC20(stream.tokenAddress);
+        IERC20 tokenContract = IERC20Template(stream.tokenAddress);
         // saving gas by checking beforehand
         if (recipientAmount > 0)
             require(tokenContract.transfer(stream.recipient, recipientAmount), "erc20 transfer failed");
