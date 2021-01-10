@@ -1,11 +1,11 @@
 pragma solidity ^0.5.16;
 
-import "./SafeMath.sol";
-import "./Ownable.sol";
-import "./IERC20.sol";
-import "./IERC1620.sol";
-import "./ReentrancyGuard.sol";
-import "./Initializable.sol";
+import "../utils/SafeMath.sol";
+import "../utils/Ownable.sol";
+import "../interfaces/IERC20.sol";
+import "../interfaces/IERC1620.sol";
+import "../utils/ReentrancyGuard.sol";
+import "../utils/Initializable.sol";
 
 contract streamBeacon {
     function getLatestRandomness()external view returns(uint256,bytes32){}
