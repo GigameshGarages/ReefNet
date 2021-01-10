@@ -1,4 +1,4 @@
-pragma solidity ^0.6.2;
+pragma solidity ^0.5.7;
 
 import "../interfaces/IFactRegistry.sol";
 import "../utils/PublicInputOffsets.sol";
