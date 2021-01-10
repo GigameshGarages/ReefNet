@@ -3,7 +3,7 @@ pragma solidity ^0.5.1;
 /// @title ERC-1620 Money Streaming Standard
 /// @dev See https://github.com/ethereum/eips/issues/1620
 
-interface IERC1620 {
+interface IERC1620Template {
 
     /// @dev This emits when streams are successfully created and added
     ///  in the mapping object.
