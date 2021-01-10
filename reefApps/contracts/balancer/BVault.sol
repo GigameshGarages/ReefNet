@@ -52,7 +52,7 @@ contract BVault {
         require(amount > 0);
         userVault[msg.sender].redeemedMilestones += 1;
         userVault[msg.sender].lastMilestone = now;
-        return gt.transfer(msg.sender,amount);
+        return bt.transfer(msg.sender,amount);
     }
     
     function getBalance(address a) public view returns(uint) {
@@ -80,12 +80,7 @@ contract BVault {
         userVault[user] = uv;
     }
     
-    // ----------------------------------------------------------------------------
-    //
-    // FOR Testing ONLY! Remove below methods while deploying
-    //
-    // ----------------------------------------------------------------------------
-    
+
     function availableMilestones() public view returns(uint) {
         uint interval = (now - userVault[msg.sender].lastMilestone) / 30 days;
         return interval - userVault[msg.sender].redeemedMilestones;
