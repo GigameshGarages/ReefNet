@@ -74,7 +74,7 @@ contract BTokenBase is BNum {
     }
 }
 
-contract BToken is BTokenBase, IERC20 {
+contract BToken is BTokenBase, IERC20Template {
 
     string  private _name     = 'Balancer Pool Token';
     string  private _symbol   = 'BPT';
